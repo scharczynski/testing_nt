@@ -1,21 +1,21 @@
 import pytest
 import pexpect
 import epics
-import util/hypos
+import util.hypos as hypos
 import time
 from hypothesis import given, settings
-from tests.Tester import Tester as tester
-from tests.M10_Tester import M10_Tester
-from tests.M40_Tester import M40_Tester
-from tests.Config_Tester import Config_Tester
-from tests.C400_Tester import C400_Tester
-from tests.F460_Tester import F460_Tester
-from tests.Interface_Tester import Interface_Tester
-from tests.Memblock_Tester import Memblock_Tester
-from tests.PSU_Tester import PSU_Tester
-from tests.Valve_Tester import Valve_Tester
-from tests.Gauge_Tester import Gauge_Tester
-from tests.Pump_Tester import Pump_Tester
+from tests import Tester as tester
+from tests import M10_Tester as M10_Tester
+from tests import M40_Tester as M40_Tester
+from tests import Config_Tester as Config_Tester
+from tests import C400_Tester as C400_Tester
+from tests import F460_Tester as F460_Tester
+from tests import Interface_Tester as Interface_Tester
+from tests import Memblock_Tester as Memblock_Tester
+# from tests.PSU_Tester import PSU_Tester
+# from tests.Valve_Tester import Valve_Tester
+# from tests.Gauge_Tester import Gauge_Tester
+# from tests.Pump_Tester import Pump_Tester
 from util import epics_util as util
 import numpy as np
 
