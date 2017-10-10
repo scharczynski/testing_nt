@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<system a500updaterate="50" xmlns="http://www.ptcusa.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ptcusa.com A510.xsd"
+  type="pyramid">
+  <hosts>
+    <!-- NOTE: the ip address does not matter for bcs, but may be required to be present -->
+    <host ip="192.168.100.135" name="wnett" localhost="true" />
+  </hosts>
+  <loopcontrollers>
+    <loopcontroller type="I128" name="I1" ip="192.168.100.239">
+      <channels>
+        <channel name="analog_in_curr_array" wire="analog[135]_in_current" />
+        <channel name="int_out_chamber_type" wire="int_out_curve_fit_chamber_type" />
+        <channel name="analog_out_discriminator" wire="analog_out_discriminator"/>
+        <channel name="analog_in_px_data_array" wire="analog[163]_in_px_data" />
+        <channel name="digital_in_connection_status" wire="digital_in_connection_status"/>
+        <channel name="digital_in_measuring" wire="digital_in_measuring"/>
+        <channel name="analog_in_external_hv" wire="analog_in_external_hv"/>
+        <channel name="analog_out_hv" wire="analog_out_hv"/>
+        <channel name="digital_out_enable_external_hv" wire="digital_out_enable_external_hv"/>
+        <channel name="analog_in_hcc" wire="analog_in_hcc"/>
+        <channel name="analog_in_range_current" wire="analog_in_range_current"/>
+        <channel name="analog_in_range_charge" wire="analog_in_range_charge"/>
+        <channel name="analog_out_integration_time" wire="analog_out_integration_time"/>
+        <channel name="int_in_integration_time" wire="int_in_integration_time"/>
+        <channel name="int_out_conversions_per_sample" wire="int_out_conversions_per_sample"/>
+        <channel name="int_out_range_hcc" wire="int_out_range_hcc"/>
+        <channel name="digital_out_initiate" wire="digital_out_initiate"/>
+        <channel name="int_out_ion_chamber_mode" wire="int_out_ion_chamber_mode"/>
+        <channel name="analog_in_ic_temp" wire="analog_in_ic_temp"/>
+        <channel name="analog_in_ic_pressure" wire="analog_in_ic_pressure"/>
+        <channel name="analog_in_ic_humidity" wire="analog_in_ic_humidity"/>
+        <channel name="analog_in_ic_reference" wire="analog_in_ic_reference"/>
+        <channel name="analog_out_dac_1" wire="analog_out_dac_1"/>
+        <channel name="analog_out_dac_2" wire="analog_out_dac_2"/>
+        <channel name="analog_in_adc_1" wire="analog_in_adc_1"/>
+        <channel name="analog_in_adc_2" wire="analog_in_adc_2"/>
+        <channel name="analog_out_averaging_period" wire="analog_out_averaging_period"/>
+        <channel name="analog_out_offset_array" wire="analog[258]_out_offset_vector"/>
+        <channel name="digital_out_clear_offset_vector" wire="digital_out_clear_offset_vector"/>
+        <channel name="string_in_firmware" wire="string_in_firmware"/>
+        <channel name="string_in_fpga" wire="string_in_fpga"/>
+        <channel name="string_in_serial_num" wire="string_in_serial_num"/>
+        <channel name="string_in_software_rev" wire="string_in_software_rev"/>
+        <channel name="string_in_secondary_fpga" wire="string_in_secondary_fpga"/>
+        <channel name="string_in_rtp_rev" wire="string_in_rtp_rev"/>
+        <channel name="string_in_hardware_rev" wire="string_in_hardware_rev"/>
+        <channel name="string_in_ip_address" wire="string_in_ip_address"/>
+        <channel name="int_out_filter" wire="int_out_filter"/>
+        <channel name="digital_out_combine_channels" wire="digital_out_combine_channels"/>
+        <channel name="analog_out_monitor_charge" wire="analog_out_monitor_charge"/>
+        <channel name="digital_out_align_channel_data" wire="digital_out_align_channel_data"/>
+        <channel name="analog_out_target_dose" wire="analog_out_target_dose"/>
+        <channel name="digital_out_opt_enable" wire="digital_out_opt_enable"/>
+        <channel name="digital_in_opt_enabled" wire="digital_in_opt_enabled"/>
+        <channel name="int_out_digitals" wire="int_out_digitals"/>
+        <channel name="int_in_digitals" wire="int_in_digitals"/>
+        <channel name="analog_in_hcc_processed" wire="analog_in_hcc_processed"/>
+        <channel name="digital_in_hcc_target_reached" wire="digital_in_hcc_target_reached"/>
+        <channel name="analog_in_hcc_dose" wire="analog_in_hcc_dose"/>
+        <channel name="int_out_start_trigger_source" wire="int_out_start_trigger_source"/>
+        <channel name="int_out_pause_trigger_source" wire="int_out_pause_trigger_source"/>
+        <channel name="int_out_stop_trigger_source" wire="int_out_stop_trigger_source"/>
+        <channel name="int_out_bnc_start_gate" wire="int_out_bnc_start_gate"/>
+        <channel name="int_out_stop_count" wire="int_out_stop_count"/>
+        <channel name="int_out_burst_count" wire="int_out_burst_count"/>
+        <channel name="int_out_register_offset" wire="int_out_register_offset"/>
+        <channel name="int_out_register_contents" wire="int_out_register_contents"/>
+        <channel name="digital_out_register_command" wire="digital_out_register_command"/>
+        <channel name="int_out_base_address" wire="int_out_base_address"/>
+        <channel name="int_in_interlock_readbacks" wire="int_in_interlock_readbacks"/>
+        <channel name="digital_out_relay_enable" wire="digital_out_relay_enable"/>
+        <channel name="digital_out_actuator_enable" wire="digital_out_actuator_enable"/>
+        <channel name="digital_out_test_ab" wire="digital_out_test_ab"/>"
+        <channel name="digital_out_interlock_enable" wire="digital_out_interlock_enable"/>
+        <channel name="digital_out_calibration_source" wire="digital_out_calibration_source"/>
+        <channel name="int_out_calibration_channel" wire="int_out_calibration_channel"/>
+        <channel name="analog_out_current_calibration_array" wire="analog[260]_out_current_calibration"/>
+        <channel name="int_out_calibrate" wire="int_out_calibrate"/>
+        <channel name="digital_out_clear_calibrations" wire="digital_out_clear_calibrations"/>
+        <channel name="digital_out_buffered_acquisition" wire="digital_out_buffered_acquisition"/>
+        <channel name="digital_out_clear_errors" wire="digital_out_clear_errors"/>
+        <channel name="digital_out_set_interlock" wire="digital_out_set_interlock"/>
+        <channel name="string_out_configure_xml" wire="string_out_configure_xml"/>
+        <channel name="analog_in_timeslice_data_array" wire="analog[256]_in_timeslice_data"/>
+      </channels>
+    </loopcontroller>
+  </loopcontrollers>
+  <interpreter>
+    <devices>
+      <epicscas type="epicscas" name="epicsserver" />
+    </devices>
+  </interpreter>
+</system>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<system a500updaterate="50" xmlns="http://www.ptcusa.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ptcusa.com A510.xsd"
+  type="pyramid">
+  <hosts>
+    <!-- NOTE: the ip address does not matter for bcs, but may be required to be present -->
+    <host ip="192.168.100.138" name="wnett" localhost="true" />
+  </hosts>
+  <loopcontrollers>
+    <loopcontroller type="C400" name="C1" ip="192.168.55.129">   
+    </loopcontroller>
+  </loopcontrollers>
+</system>
+

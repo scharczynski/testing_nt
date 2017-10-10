@@ -22,8 +22,8 @@ import numpy as np
 
 
 ig2_version = 'ig2-2.6.7'   
-ig2_path = "/home/steve/workspace/nt_ig2/"
-path = ig2_path + ig2_version + " " + ig2_path
+ig2_path = "/WORKSPACE/ig2/"
+path = ig2_path + ig2_version + " " + "/WORKSPACE/testing_nt/testing_nt/xmls"
 power_strip_ip = ''
 
 config_path = ''
@@ -45,10 +45,10 @@ def set_params():
     
     return path
 
-@pytest.fixture()
-def use_server():
-    path = "python /home/steve/workspace/IG2Scripts/misc_projects/epics_server_tests/tutorial.py"
-    return path
+# @pytest.fixture()
+# def use_server():
+#     path = "python /home/steve/workspace/IG2Scripts/misc_projects/epics_server_tests/tutorial.py"
+#     return path
 
 class Test_M10(object):
 
@@ -521,66 +521,66 @@ class Test_Memblock(object):
     #     results = tester.set_analog_outs()
     #     tester.kill_pexpect()
     #     assert results == 15
-class Test_PSU(object):
-    # ig2_version = 'ig2-2.6.7'   
-    # ig2_path = "/home/steve/workspace/nt_ig2/"
-    # path = ig2_path + ig2_version + " " + ig2_path
+# class Test_PSU(object):
+#     # ig2_version = 'ig2-2.6.7'   
+#     # ig2_path = "/home/steve/workspace/nt_ig2/"
+#     # path = ig2_path + ig2_version + " " + ig2_path
 
-    def test_set_voltage(self, set_params):
-        tester = PSU_Tester(set_params, "powersupply.xml")
-        results = tester.set_command_voltage()
-        tester.kill_pexpect()
-        print results
-        assert results[1] == pytest.approx(results[0], rel=0.01)        
+#     def test_set_voltage(self, set_params):
+#         tester = PSU_Tester(set_params, "powersupply.xml")
+#         results = tester.set_command_voltage()
+#         tester.kill_pexpect()
+#         print results
+#         assert results[1] == pytest.approx(results[0], rel=0.01)        
 
-    def test_set_current(self, set_params):
-        tester = PSU_Tester(set_params, "powersupply.xml")
-        results = tester.set_command_current()
-        tester.kill_pexpect()
-        assert results[1] == pytest.approx(results[0], rel=0.01)
+#     def test_set_current(self, set_params):
+#         tester = PSU_Tester(set_params, "powersupply.xml")
+#         results = tester.set_command_current()
+#         tester.kill_pexpect()
+#         assert results[1] == pytest.approx(results[0], rel=0.01)
 
-    def test_get_current(self, set_params):
-        tester = PSU_Tester(set_params, "powersupply.xml")
-        results = tester.get_current_readback()
-        tester.kill_pexpect()
-        assert results[0] == pytest.approx(results[1], rel=0.01)
+#     def test_get_current(self, set_params):
+#         tester = PSU_Tester(set_params, "powersupply.xml")
+#         results = tester.get_current_readback()
+#         tester.kill_pexpect()
+#         assert results[0] == pytest.approx(results[1], rel=0.01)
 
-    def test_get_voltage(self, set_params):
-        tester = PSU_Tester(set_params, "powersupply.xml")
-        results = tester.get_voltage_readback()
-        tester.kill_pexpect()
-        assert results == pytest.approx(400, rel=0.01)
+#     def test_get_voltage(self, set_params):
+#         tester = PSU_Tester(set_params, "powersupply.xml")
+#         results = tester.get_voltage_readback()
+#         tester.kill_pexpect()
+#         assert results == pytest.approx(400, rel=0.01)
 
-    def test_enable(self, set_params):
-        tester = PSU_Tester(set_params, "powersupply.xml")
-        results = tester.enable()
-        tester.kill_pexpect()
-        assert results[0] == 0 and results[1] == 1
+#     def test_enable(self, set_params):
+#         tester = PSU_Tester(set_params, "powersupply.xml")
+#         results = tester.enable()
+#         tester.kill_pexpect()
+#         assert results[0] == 0 and results[1] == 1
 
-    def test_disable(self, set_params):
-        tester = PSU_Tester(set_params, "powersupply.xml")
-        results = tester.disable()
-        tester.kill_pexpect()
-        assert results[0] == 1 and results[1] == 0
+#     def test_disable(self, set_params):
+#         tester = PSU_Tester(set_params, "powersupply.xml")
+#         results = tester.disable()
+#         tester.kill_pexpect()
+#         assert results[0] == 1 and results[1] == 0
 
-    def test_get_hv_readbacks(self, set_params):
-        tester = PSU_Tester(set_params, "powersupply.xml")
-        results = tester.get_high_voltage_readbacks()
-        tester.kill_pexpect()
-        assert all(x==True for x in results) == True        
+#     def test_get_hv_readbacks(self, set_params):
+#         tester = PSU_Tester(set_params, "powersupply.xml")
+#         results = tester.get_high_voltage_readbacks()
+#         tester.kill_pexpect()
+#         assert all(x==True for x in results) == True        
     
-    def test_fault_messages(self, set_params):
-        tester = PSU_Tester(set_params, "powersupply.xml")
-        results = tester.fault_codes()
-        tester.kill_pexpect()
-        print results
-        assert all(isinstance(x, str) for x in results) == True
+#     def test_fault_messages(self, set_params):
+#         tester = PSU_Tester(set_params, "powersupply.xml")
+#         results = tester.fault_codes()
+#         tester.kill_pexpect()
+#         print results
+#         assert all(isinstance(x, str) for x in results) == True
 
-    def test_clear_error(self, set_params):
-        tester = PSU_Tester(set_params, "powersupply.xml")
-        results = tester.clear_error()
-        tester.kill_pexpect()
-        assert results[1] != '' and results[0] == ''
+#     def test_clear_error(self, set_params):
+#         tester = PSU_Tester(set_params, "powersupply.xml")
+#         results = tester.clear_error()
+#         tester.kill_pexpect()
+#         assert results[1] != '' and results[0] == ''
         
 class Test_Valves(object):
 
